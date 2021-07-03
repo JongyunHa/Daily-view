@@ -22,6 +22,11 @@ npm i && npm run start:dev-hot
 
 http://localhost:3095/api
 
-### daily view page
+### start frontend
+
+```
+cd frontend && npm i
+npm run start
+```
 
 http://localhost:3000
