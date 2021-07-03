@@ -2,12 +2,12 @@
 
 <hr />
 
-### Start a backend with docker
+### Start to Docker
 
 ```
-cd backend && docker-compose up -d
+docker-compose up -d
 ```
 
 ### daily view page
 
-`http://localhost:3000`
+http://localhost:3000
