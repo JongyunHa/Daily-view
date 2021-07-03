@@ -2,11 +2,25 @@
 
 <hr />
 
-### Start to Docker
+### start backend server
+
+create .env file from .env.example
+
+#### setup postgres
+
+- DB_PASSWORD=password
+- DB_USERNAME=user
+- DB_NAME=dailyview
+- DB_PORT=5432
+- DB_HOST=localhost
 
 ```
-docker-compose up -d
+npm i && npm run start:dev-hot
 ```
+
+#### api swagger docs
+
+http://localhost:3095/api
 
 ### daily view page
 

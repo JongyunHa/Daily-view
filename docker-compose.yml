@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   frontend:
-    container_name: blog-frontend
+    container_name: daily-view-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
       - 3000:3000
 
   backend:
-    container_name: blog-api
+    container_name: daily-view-backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -20,7 +20,7 @@ services:
       - /usr/src/app/backend/node_modules
       - ./backend:/usr/src/app/backend
     ports:
-      - 3095:3095
+      - 3095:3000
     depends_on:
       - postgres
     env_file:
@@ -38,4 +38,4 @@ services:
 
 volumes:
   postgres:
-    name: db
+    name: app
