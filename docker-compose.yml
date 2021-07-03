@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  frontend:
+    container_name: blog-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - /usr/src/app/frontend/node_modules
+      - ./frontend:/usr/src/app/frontend
+    ports:
+      - 3000:3000
+
+  backend:
+    container_name: blog-api
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - /usr/src/app/backend/node_modules
+      - ./backend:/usr/src/app/backend
+    ports:
+      - 3095:3095
+    depends_on:
+      - postgres
+    env_file:
+      - ./backend/.env
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    ports:
+      - 5432:5432
+    env_file:
+      - ./backend/.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
+    name: db
