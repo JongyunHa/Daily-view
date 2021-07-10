@@ -23,7 +23,7 @@ export class UsersService {
       if (existUser) {
         return {
           success: false,
-          error: 'exsit user',
+          error: 'There is a user with that email already',
         };
       }
       const user = this.userRepository.create({
