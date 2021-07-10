@@ -1,3 +1,3 @@
 function test(a, b) {
-    return a - b; // crash
+    return a - b * b; // crash
 }
